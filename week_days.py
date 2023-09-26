@@ -6,8 +6,8 @@ def day_of_week():
     for day in days:
         print(day)
     
-    for day in range(1):
-        print(f'{days}')
+    for day in range(len(days)):
+        print(days[day])
     # Let's start simple, and build up from there.
     # 1.1 TODO: Write a for loop that prints out each day in the `days` variable above.
 
@@ -65,16 +65,15 @@ def favorite_activities():
 
 def temp_by_day():
     for day in days:
-        ask_temp = input(f'What is the temperature on {day}? ')
-        ask_temp = (int(ask_temp))
+        ask_tem = int(input(f'What is the temperature on {day}? '))
 
-        if ask_temp < 50:
+        if ask_tem < 50:
             print('Brr, put on a jacket!')
-        elif ask_temp > 50 and ask_temp < 65:
+        elif ask_tem >= 50 and ask_tem <= 65:
             print('Cozy, grab a sweater')
-        elif ask_temp > 65:
+        elif ask_tem > 65:
             print('Put on some sunscreen!')
-
+        
     # 3 TODO: Write a program that loops through the days in the week. Each day, ask the user what the temperature
     # is. If the temperature is below 50, tell the user to 'Brr, put on a jacket!'. Or, if the temperature is
     # between 50 and 65, tell the user to 'Cozy, grab a sweater'. Finally, if the temperature is above 65,
@@ -87,10 +86,24 @@ def temp_by_day_continuous():
     ask_temp = input(f'What temperature is it outside? ')
     ask_temp = (int(ask_temp))
     while (ask_temp < 65):
-        print('Wear a sweater')
-
-
+        print('Wear a sweater') 
+        ask_temp = input(f'What temperature is it outside? ')
+        ask_temp = (int(ask_temp))
+        while (ask_temp >= 65):
+         break
     print('Spring has sprung!')
+
+    # 4 TODO: Write a program that asks the user what temperature it is outside. While the temperature is below 65,
+    # tell the user to wear a sweater. Once the temperature is over 65, stop looping, and tell the user that
+    # Spring has sprung!
+
+    # NOTE: If you accidentally create an infinite while loop, it's ok! Go into the command line and
+    # hit control + C to stop the program. No harm has been done to your computer.
+
+# temp_by_day_continuous()
+    
+        
+        
 
     # 4 TODO: Write a program that asks the user what temperature it is outside. While the temperature is below 65,
     # tell the user to wear a sweater. Once the temperature is over 65, stop looping, and tell the user that
